@@ -1,12 +1,20 @@
 import React from 'react';
-import ReactSlider, { Settings } from 'react-slick';
+import ReactSlick, { Settings } from 'react-slick';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 interface Props {
   settings?: Settings;
 }
+
+const StyledSlider = styled(ReactSlick)`
+    .slick-slider div{
+      width: 1200px;
+    }
+`;
 
 const ArrowButton = styled.button<{ pos?: 'left' | 'right' }>`
   padding: 16px;
@@ -33,7 +41,7 @@ const ArrowButton = styled.button<{ pos?: 'left' | 'right' }>`
 const DEFAULT_SETTINGS: Settings = {
   dots: false,
   arrows: true,
-  infinite: false,
+  infinite: true,
   speed: 500,
   slidesToShow: 5,
   slidesToScroll: 5,
@@ -52,9 +60,9 @@ const DEFAULT_SETTINGS: Settings = {
 };
 
 const Slider: React.FC <Props> = ({ settings = DEFAULT_SETTINGS, children }) => (
-  <ReactSlider {...settings}>
+  <ReactSlick {...settings}>
     {children}
-  </ReactSlider>
+  </ReactSlick>
 )
 
 export default Slider;

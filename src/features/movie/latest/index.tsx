@@ -5,7 +5,10 @@ import useLatestMovie from './useLatestMovie';
 import Card from '../../../components/Card';
 
 const Base = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
   margin-bottom: 42px;
+
 `;
 
 const Title = styled.h4`
@@ -32,7 +35,7 @@ const LatestMovieSection: React.FC = () => {
               key={latestMovieResponse.data.id}
               linkUrl={`/movie/${latestMovieResponse.data.id}`}
               title={latestMovieResponse.data.title}
-              posterPath={`${process.env.REACT_APP_IMAGE_PREFIX}w500/${latestMovieResponse.data.poster_path}`}
+              posterPath={`${process.env.REACT_APP_IMAGE_PREFIX}/w500/${latestMovieResponse.data.poster_path}`}
               voteAverage={latestMovieResponse.data.vote_average}
               year={getYear(latestMovieResponse.data.release_date)}
             />
