@@ -5,7 +5,7 @@ import useLatestMovie from './useLatestMovie';
 import Card from '../../../components/Card';
 
 const Base = styled.div`
-  max-width: 1200px;
+  max-width: 1220px;
   margin: 0 auto;
   margin-bottom: 42px;
 
@@ -16,6 +16,7 @@ const Title = styled.h4`
   font-weight: 700;
   line-height: 30px;
   padding: 12px 0 14px;
+  margin-left: 10px;
 `;
 
 const LatestMovieSection: React.FC = () => {

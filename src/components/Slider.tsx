@@ -23,7 +23,7 @@ const ArrowButton = styled.button<{ pos?: 'left' | 'right' }>`
   z-index: 1;
   top: 50%;
   background-color: #fff;
-  ${({ pos }) => pos === 'left' ? css`left: 0; transform: translate(-50%, -50%)` : css`right: 0; transform: translate(50%, -50%)`};
+  ${({ pos }) => pos === 'left' ? css`left: 0; transform: translate(-30%, -80%)` : css`right: 0; transform: translate(50%, -80%)`};
   &:before {
     content: initial;
   }

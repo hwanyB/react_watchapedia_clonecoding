@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled';
-import useNowPlayingMovie from './useNowPlayingMovie';
+import useTopRatedMovie from './useTopRatedMovie';
 import Card from '../../../components/Card';
 import Slider from '../../../components/Slider';
 
@@ -19,14 +19,13 @@ const Title = styled.h4`
   margin-left: 10px;
 `;
 
-
-const NowPlayingSection: React.FC = () => {
-    const { data: nowPlayingMovieResponse, isLoading } = useNowPlayingMovie();
+const TopRatedSection: React.FC = () => {
+    const { data: nowPlayingMovieResponse, isLoading } = useTopRatedMovie();
     const getYear = (data: string) => data.split('-')[0];
 
     return (
         <Base>
-            <Title>최근 개봉작</Title>
+            <Title>최고 평점</Title>
             {
                 isLoading ? (
                     <div>Loading...</div>
@@ -51,4 +50,4 @@ const NowPlayingSection: React.FC = () => {
     )
 }
 
-export default NowPlayingSection;
+export default TopRatedSection;
