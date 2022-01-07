@@ -43,7 +43,7 @@ const MoreSee = styled.div`
 interface Props {
     title: string;
     year: string;
-    genres: string;
+    genres: any;
     runtime: number;
     overview: string;
 }
@@ -71,6 +71,9 @@ const DefaultInfo: React.FC<Props> = ({
                     {year}·{genres}
                     <br />
                     {hour}시간 {minute}분
+                    <br />
+                    <br />
+                    {overview}
                 </Summary>
             </HeaderWrapper>
         </Base>

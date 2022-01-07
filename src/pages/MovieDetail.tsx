@@ -9,6 +9,8 @@ import { Rating } from '@mui/material';
 
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import DefaultInfo from '../features/movie/detail/DefaultInfo';
+import Similar from '../features/movie/detail/Similar';
 
 
 const Base = styled.div`
@@ -290,8 +292,14 @@ const MovieDetail: React.FC<Props> = () => {
                             {/* 상세정보 영역 */}
                             <BottomInfo>
                                 <ContentSectionContainer>
-                                    {/* <DefaultInfo />
-                                    <Similar /> */}
+                                    <DefaultInfo
+                                        title={data.data.title}
+                                        year={year}
+                                        genres={genres}
+                                        runtime={data.data.runtime}
+                                        overview={data.data.overview}
+                                    />
+                                    <Similar id={id} />
                                 </ContentSectionContainer>
                             </BottomInfo>
                         </>
